@@ -87,7 +87,7 @@
     </a>
     <a href="vibrate.html" class="am-list-item">
         <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">震动</div>
+            <div class="am-list-title am-ft-ellipsis">Vibrate</div>
         </div>
         <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
     </a>
@@ -160,8 +160,9 @@
           console.log("no Zalo Pay");
       } else {
         ZaloPay.vibration.vibrate({
-          duration: 3000
+          duration: 500
         }, function() {
+          console.log("call back");
           Z('#code_output').html(function(idx, oldHtml) {
             return "Call Return!!";
           });
