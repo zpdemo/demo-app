@@ -127,7 +127,7 @@
             // 排除掉remoteLog自身的调用
             // Exclude the call to remoteLog itself
             "remoteLog" !== name && antLog('ZaloPayJSBridge.call:', name, opt, _callback);
-            window.ZaloPayJSBridge.call(name, opt, cb.toString());
+            window.ZaloPayJSBridge.call(name, opt, cb);
         } else {
             ZaloPay._apiQueue = ZaloPay._apiQueue || [];
             ZaloPay._apiQueue.push(args);
