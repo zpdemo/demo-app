@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>震动Demo</title>
+    <title>Vibrate - Zalo Pay Demo</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -60,79 +60,6 @@
 </head>
 <body ontouchstart="">
 
-<div id="J_widgetList" class="am-list am-list-flat am-list-flat-chip">
-    <a href="getNetworkType.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">获取用户网络状态</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="takePhoto.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">拍照</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="share.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">分享组件</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="getCities.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">获取城市组件</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="vibrate.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">震动</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="shake.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">摇一摇</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="selectAddress.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">选取收货地址</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="scan.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">扫码</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="getLocation.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">获取用户地理位置</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-    <a href="speech.html" class="am-list-item">
-        <div class="am-list-content">
-            <div class="am-list-title am-ft-ellipsis">语音转文字</div>
-        </div>
-        <div class="am-list-arrow"><span class="am-icon-arrow-horizontal"></span></div>
-    </a>
-</div>
-
-<div class="example-code">
-    <div class="am-content">
-        <div class="am-list-header">
-            <p>Call Vibrate result</p>
-        </div>
-    </div>
-    <pre><code class="html" id="code_output"></code></pre>
-
-</div>
-
 <div class="example-trigger">
     <button id="J_exampleTrigger" class="am-button">Vibrate</button>
 </div>
@@ -147,24 +74,14 @@
       // Ali.hideToolbar();
       console.log("loaded in ZaloPayClient");
     }
-    function getAbsoluteUrl(url) {
-      var a = document.createElement('A');
-      a.href = url; // 设置相对路径给Image, 此时会发送出请求
-      url = a.href; // 此时相对路径已经变成绝对路径
-      return url;
-    }
     Z('#J_exampleTrigger').click(function(e) {
       e.preventDefault();
       if(navigator.userAgent.indexOf("ZaloPayClient")===-1) {
-          // alert('请在支付宝钱包内运行');
           console.log("no Zalo Pay");
       } else {
         ZaloPay.vibration.vibrate({
           duration: 3000
         }, function() {
-          Z('#code_output').html(function(idx, oldHtml) {
-            return "Call Return!!";
-          });
         });
       }
     });
