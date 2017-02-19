@@ -81,7 +81,8 @@
       } else {
         ZaloPay.vibration.vibrate({
           duration: 3000
-        }, function() {
+        }, function(r) {
+          console.log("return from Zalo Pay", r.error, r.errorMessage);
         });
       }
     });
