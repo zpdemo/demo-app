@@ -82,7 +82,7 @@
         ZaloPay.vibration.vibrate({
           duration: 3000
         }, function(r) {
-          console.log("return from Zalo Pay", r.error, r.errorMessage);
+          console.log("return from Zalo Pay: error: " + r.error + ", message: " + r.errorMessage);
         });
       }
     });
